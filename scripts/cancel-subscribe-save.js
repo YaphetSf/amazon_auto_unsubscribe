@@ -388,6 +388,9 @@ async function main() {
   const action = IS_DRY_RUN ? "Dry-run reviewed" : "Cancelled";
   console.log(`\nFinished. ${action} ${cancelledCount} subscription(s), skipped ${skippedCount}.`);
 
+  // Save updated session so cookies stay fresh for next run
+  await context.storageState({ path: STORAGE_FILE });
+
   await browser.close();
 }
 

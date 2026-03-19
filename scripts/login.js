@@ -22,10 +22,14 @@ async function main() {
   const context = await browser.newContext();
   const page = await context.newPage();
 
-  console.log(`Opening Amazon at ${LOGIN_URL}. Please log in manually, including MFA if needed.`);
+  console.log(`\nOpening Amazon at ${LOGIN_URL}`);
+  console.log("Please log in manually in the browser (including MFA if needed).\n");
   await page.goto(LOGIN_URL, { waitUntil: "domcontentloaded" });
 
-  console.log("Navigate to the exact Amazon page you want to use, then press Enter here to save the session.");
+  console.log("==========================================================");
+  console.log("  After you have logged in, come back here and press ENTER");
+  console.log("  to save your session. Do NOT close the browser manually.");
+  console.log("==========================================================\n");
   await new Promise((resolve) => {
     process.stdin.resume();
     process.stdin.once("data", () => resolve());
