@@ -1,0 +1,6 @@
+{
+  "baseUrl": "https://www.amazon.co.uk",
+  "subscribeAndSaveUrl": "https://www.amazon.co.uk/auto-deliveries/subscriptionList?ref_=sns_discover_m_d_nav_mys",
+  "excludeKeywords": [],
+  "maxCancellations": 50
+}
